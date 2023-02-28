@@ -1,0 +1,8 @@
+# Build Dir
+build/
+# clangd Cache
+.cache/
+# vscode configs
+.vscode/
+# vs configs
+.vs/
