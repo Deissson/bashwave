@@ -11,12 +11,12 @@ It's built to be:
 
 Install Bashwave by running:
  ```
- curl -sSL https://bashwave.sh/install
+ Currently There is no way to install Bashwave, But it's a Work in Progress!
  ```
 
 Launch Bashwave by running `bw` in your terminal.
 
-Start using built-in tools or install new ones using `bw add --list-recommended` !
+Start using built-in tools or install new ones using `bw add --list-recommended` *// WIP*
 
 # 🔧 Customization
 
@@ -38,16 +38,16 @@ You can also install new tools by using the bw command. Check out the Bashwave w
 
 # 🛠️ Development
 
-If you want to develop your own tools for Bashwave, you can use the **Bashwave SDK**!
+If you want to develop your own tools for Bashwave, you can use the **Bashwave SDK**! *// WIP*
 
-
- The SDK provides a set of functions and a file structure to help you get started. Check out the `bw-sdk` repository for more information.
+The SDK provides a set of functions and a file structure to help you get started. Check out the `bw-sdk` repository for
+more information. *// WIP*
 
 # 👥 Community
 
 Join the Bashwave community to share your tools, themes, and ideas.
 
- You can find us on **Discord** and **Twitter**.
+~~You can find us on **Discord** and **Twitter**.~~
 
 # 📄 License
 
