@@ -10,7 +10,9 @@ add_executable(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
     fmt
 )
- 
+
+add_definitions(-DUSE_EMOJI)
+
 target_include_directories(${PROJECT_NAME} PRIVATE
     lib/fmt/include
     include

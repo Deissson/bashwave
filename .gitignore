@@ -1,8 +1,11 @@
 # Build Dir
 build/
+cmake-build-debug/
 # clangd Cache
 .cache/
 # vscode configs
 .vscode/
 # vs configs
 .vs/
+# vscode workspaces
+*.code-workspace

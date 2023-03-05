@@ -32,7 +32,7 @@ Bashwave comes with a set of built-in tools to help you get things done. Here ar
 
 1. **flip**: Flip a coin
 2. **8ball**: Get an answer to your question from a Magic 8 Ball
-3. **quote**: Get a random quote
+3. **search**: Search through everything!
 
 You can also install new tools by using the bw command. Check out the Bashwave website for a list of available tools.
 
