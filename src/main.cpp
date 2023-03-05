@@ -5,9 +5,10 @@
 
 int main()
 {
-    print(fg(color::blue_violet),
-          "This project is under development! Please be patient, It will be released when it will be finished.\n");
-    vector<string> options = {tools::flipACoin::NAME, tools::magicball::NAME, tools::search::NAME};
+  print(fg(color::blue_violet),
+        "This project is under development (Pre-Pre Alpha State)! Please be "
+        "patient, It will be released when it will be finished.\n");
+  vector<string> options = {tools::flipACoin::NAME, tools::magicball::NAME, tools::search::NAME};
     init(options);
     int runTimes = 0;
     while (true)
