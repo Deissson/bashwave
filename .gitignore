@@ -9,3 +9,5 @@ cmake-build-debug/
 .vs/
 # vscode workspaces
 *.code-workspace
+# jetbrains clio / IntelliJ
+.idea/

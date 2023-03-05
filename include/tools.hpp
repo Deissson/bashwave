@@ -37,10 +37,14 @@ class flipACoin {
       for (auto& i : result) {
         print("{}\t", i);
       }
-      double tailsCount = std::count(result.begin(), result.end(), "Tails");
-      double headsCount = std::count(result.begin(), result.end(), "Heads");
-      print("\n\nHeads: {:.1f}%\n", headsCount / result.size() * 100);
-      print("Tails: {:.1f}%\n", tailsCount / result.size() * 100);
+      auto tailsCount = static_cast<double>(
+          std::count(result.begin(), result.end(), "Tails"));
+      auto headsCount = static_cast<double>(
+          std::count(result.begin(), result.end(), "Heads"));
+      print("\n\nHeads: {:.1f}%\n",
+            headsCount / static_cast<double>(result.size()) * 100);
+      print("Tails: {:.1f}%\n",
+            tailsCount / static_cast<double>(result.size()) * 100);
       print("\n");
       break;
     }
@@ -158,44 +162,52 @@ class search {
   static inline string DEFAULT_PROVIDER = "f";
   static inline string WEB_SEARCHENGINE = "google";
   static inline string DEFAULT_FILE_SEARCH = "home";
-
   static void settings() {
-    switch (DEFAULT_PROVIDER[0]) {
-    case 'w':
-      print("\n1: Default Search provider = Web\n");
-      break;
-    case 'f':
-      print("\n1: Default Search provider = Files\n");
-      break;
-    case 't':
-      print("\n1: Default Search provider = Tools\n");
-      break;
-    default:
-      print("\n1: Default Search provider = Unknown\n");
-      break;
-    }
-    string choice = prompt("Settings: Choose a setting to change");
+    std::map<char, string> providers = {
+        {'w', "Web"}, {'t', "Tools"}, {'f', "Files"}};
+    print("\n1: Default Search provider = {}\n",
+          providers[static_cast<char>(tolower(DEFAULT_PROVIDER[0]))]);
     print("\n2: Default File search location = {}\n", DEFAULT_FILE_SEARCH);
-    print("\n3: Default Web Search Engine = {}\n", WEB_SEARCHENGINE);
-    while (choice == "1") {
-      string provider =
-          prompt("Choose a default search provider (Web, Files, Tools)");
-      switch (tolower(provider[0])) {
-      case 'w':
-        DEFAULT_PROVIDER = "w";
-        break;
-      case 'f':
-        DEFAULT_PROVIDER = "f";
-        break;
-      case 't':
-        DEFAULT_PROVIDER = "t";
-        break;
-      default:
-        print("No such provider");
-        break;
+    print("\n3: Default Web Search Engine = {}\n\n", WEB_SEARCHENGINE);
+    string choice = prompt("Settings: Choose a setting to change");
+    if (choice == "1") {
+      while (true) {
+        string provider =
+            prompt("Choose a default search provider (Web, Files, Tools)");
+        char providerKey = static_cast<char>(tolower(provider[0]));
+        if (providers.find(providerKey) != providers.end()) {
+          DEFAULT_PROVIDER = providerKey;
+          print("\nSuccessfully changed Search Provider to {}\n",
+                providers[providerKey]);
+          break;
+        } else {
+          print("No such provider!");
+        }
       }
+    } else if (choice == "3") {
+      while (true) {
+        string _raw_engine =
+                   prompt("Choose a Search Engine (Google, DuckDuckGo, Bing)"),
+               engine;
+        for (auto i : _raw_engine) engine += static_cast<char>(tolower(i));
+
+        if (engine == "duckduckgo") {
+          WEB_SEARCHENGINE = "duckduckgo";
+          break;
+        } else if (engine == "google") {
+          WEB_SEARCHENGINE = "google";
+          break;
+        } else if (engine == "bing") {
+          WEB_SEARCHENGINE = "bing";
+          break;
+        } else {
+          print("No such search engine!\n");
+        }
+      }
+      print("Successfully changed Web Search Engine to {}\n", WEB_SEARCHENGINE);
+    } else {
+      print("\nNo such setting\n");
     }
-    print("\nSuccessfully changed Search Provider\n");
   }
 };
 }  // namespace tools
