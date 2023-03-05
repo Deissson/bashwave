@@ -51,4 +51,5 @@ Join the Bashwave community to share your tools, themes, and ideas.
 
 # 📄 License
 
-Bashwave is released under the **MIT License** refer to _LICENSE_ file for more info.
+Bashwave is released under the **MIT License** refer to [
+_LICENSE_](https://raw.githubusercontent.com/Deissson/bashwave/main/LICENSE) file for more info.
